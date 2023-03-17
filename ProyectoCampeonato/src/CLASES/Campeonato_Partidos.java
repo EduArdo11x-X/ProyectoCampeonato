@@ -9,19 +9,20 @@ package CLASES;
  *
  * @author user
  */
-public class Campeonato_Partidos {
+public class Campeonato_Partidos extends Campeonato {
     
    private String id_detalle_juego;
-   private String Campeonato_id;
    private String Id_partido;
 
-    public Campeonato_Partidos(String id_detalle_juego, String Campeonato_id, String Id_partido) {
+    public Campeonato_Partidos(String id_detalle_juego, String Id_partido, String Campeonato_Id, String Campeonato_nombre, int campeonato_numeros_Equipo, String Campeonato_fecha_inicio, String Campeonato_fecha_final) {
+        super(Campeonato_Id, Campeonato_nombre, campeonato_numeros_Equipo, Campeonato_fecha_inicio, Campeonato_fecha_final);
         this.id_detalle_juego = id_detalle_juego;
-        this.Campeonato_id = Campeonato_id;
         this.Id_partido = Id_partido;
     }
 
-    public Campeonato_Partidos() {
+    public Campeonato_Partidos(String id_detalle_juego, String Id_partido) {
+        this.id_detalle_juego = id_detalle_juego;
+        this.Id_partido = Id_partido;
     }
 
     public String getId_detalle_juego() {
@@ -30,14 +31,6 @@ public class Campeonato_Partidos {
 
     public void setId_detalle_juego(String id_detalle_juego) {
         this.id_detalle_juego = id_detalle_juego;
-    }
-
-    public String getCampeonato_id() {
-        return Campeonato_id;
-    }
-
-    public void setCampeonato_id(String Campeonato_id) {
-        this.Campeonato_id = Campeonato_id;
     }
 
     public String getId_partido() {
@@ -50,9 +43,7 @@ public class Campeonato_Partidos {
 
     @Override
     public String toString() {
-        return "Campeonato_Partido{" + "id_detalle_juego=" + id_detalle_juego + ", Campeonato_id=" + Campeonato_id + ", Id_partido=" + Id_partido + '}';
+        return "Campeonato_Partidos{" + "id_detalle_juego=" + id_detalle_juego + ", Id_partido=" + Id_partido + '}';
     }
-   
-   
-    
+
 }
