@@ -56,8 +56,6 @@ public class LoginUsuario extends javax.swing.JFrame {
         jLabel21.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         jLabel21.setText("CONTRASEÑA : ");
 
-        jPasswordField7.setText("jPasswordField1");
-
         jButton13.setBackground(new java.awt.Color(255, 255, 255));
         jButton13.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/ingresar (3).png"))); // NOI18N
@@ -113,7 +111,7 @@ public class LoginUsuario extends javax.swing.JFrame {
                 .addGap(92, 92, 92))
         );
 
-        jPanel9.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 380, 430));
+        jPanel9.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 380, 430));
 
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/fondoini2.jpg"))); // NOI18N
         jPanel9.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 520));

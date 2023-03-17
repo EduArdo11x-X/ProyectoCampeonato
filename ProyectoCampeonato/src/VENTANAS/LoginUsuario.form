@@ -52,7 +52,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="170" y="10" width="380" height="430"/>
+              <AbsoluteConstraints x="170" y="30" width="380" height="430"/>
             </Constraint>
           </Constraints>
 
@@ -146,9 +146,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JPasswordField" name="jPasswordField7">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jPasswordField1"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="jButton13">
               <Properties>

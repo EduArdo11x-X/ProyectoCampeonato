@@ -61,8 +61,6 @@ public class LoginAdmi extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         jLabel5.setText("CONTRASEÑA : ");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 277, -1, -1));
-
-        jPasswordField1.setText("jPasswordField1");
         jPanel2.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 274, 158, -1));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
