@@ -3,25 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Clases;
+package CLASES;
 
 /**
  *
- * @author PC01
+ * @author user
  */
-public class Campeonato_Partido {
+public class Campeonato_Partidos {
     
-    private String id_detalle_juego;
-    private String Campeonato_id;
-    private String Id_partido;
+   private String id_detalle_juego;
+   private String Campeonato_id;
+   private String Id_partido;
 
-    public Campeonato_Partido(String id_detalle_juego, String Campeonato_id, String Id_partido) {
+    public Campeonato_Partidos(String id_detalle_juego, String Campeonato_id, String Id_partido) {
         this.id_detalle_juego = id_detalle_juego;
         this.Campeonato_id = Campeonato_id;
         this.Id_partido = Id_partido;
     }
 
-    public Campeonato_Partido() {
+    public Campeonato_Partidos() {
     }
 
     public String getId_detalle_juego() {
@@ -52,7 +52,7 @@ public class Campeonato_Partido {
     public String toString() {
         return "Campeonato_Partido{" + "id_detalle_juego=" + id_detalle_juego + ", Campeonato_id=" + Campeonato_id + ", Id_partido=" + Id_partido + '}';
     }
-    
-    
+   
+   
     
 }
