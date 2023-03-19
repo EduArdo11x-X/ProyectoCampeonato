@@ -60,6 +60,7 @@ public class Registrar_Jugador extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -169,6 +170,9 @@ public class Registrar_Jugador extends javax.swing.JFrame {
         });
         jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 600, -1, -1));
 
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/jugador-de-futbol (1).png"))); // NOI18N
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -240,6 +244,7 @@ public class Registrar_Jugador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
