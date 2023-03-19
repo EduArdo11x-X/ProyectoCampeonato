@@ -125,7 +125,7 @@ public class Registrar_DT extends javax.swing.JFrame {
         jPanel1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 190, 110, -1));
         jPanel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 240, 190, -1));
         jPanel1.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 120, -1));
-        jPanel1.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 340, 60, -1));
+        jPanel1.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 340, 60, -1));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/lupa (1).png"))); // NOI18N
