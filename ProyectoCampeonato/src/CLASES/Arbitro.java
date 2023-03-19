@@ -10,7 +10,8 @@ package CLASES;
  * @author EDU
  */
 public class Arbitro {
-        private String id_arbitro;
+
+    private String id_arbitro;
     private String cedula_per;
     private String num_campeonato;
     private String experiencia;
@@ -61,8 +62,5 @@ public class Arbitro {
     public String toString() {
         return "Arbitro{" + "id_arbitro=" + id_arbitro + ", cedula_per=" + cedula_per + ", num_campeonato=" + num_campeonato + ", experiencia=" + experiencia + '}';
     }
-    
-    
 
-    
 }
