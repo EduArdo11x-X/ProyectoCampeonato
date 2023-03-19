@@ -9,7 +9,7 @@ package CLASES;
  *
  * @author Lenovo
  */
-public class Direccion {
+public class Direccion extends Parroquia {
 
     private String Id_direccion;
     private String Calle_Principal;
