@@ -9,22 +9,18 @@ package CLASES;
  *
  * @author Lenovo
  */
-public class Cancha{
+public class Cancha extends Direccion {
 
-    private String Id_Cancha;
-    private String Nom_Cancha;
-    private String Cap_Cancha;
+    String Id_Cancha;
+    String Nom_Cancha;
+    String Cap_Cancha;
 
-    public Cancha(String Id_Cancha, String Nom_Cancha, String Cap_Cancha) {
+    public Cancha(String Id_Cancha, String Nom_Cancha, String Cap_Cancha, String Id_direccion, String Calle_Principal, String Calle_Secundaria) {
+        super(Id_direccion, Calle_Principal, Calle_Secundaria);
         this.Id_Cancha = Id_Cancha;
         this.Nom_Cancha = Nom_Cancha;
         this.Cap_Cancha = Cap_Cancha;
     }
-
-    public Cancha() {
-    }
-    
-    
 
     public String getId_Cancha() {
         return Id_Cancha;
