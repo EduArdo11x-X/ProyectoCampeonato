@@ -16,7 +16,7 @@ public class LoginUsuario extends javax.swing.JFrame {
      */
     public LoginUsuario() {
         initComponents();
-        setSize(728,490);
+        setSize(780,600);
     }
 
     /**
@@ -37,6 +37,9 @@ public class LoginUsuario extends javax.swing.JFrame {
         jPasswordField7 = new javax.swing.JPasswordField();
         jButton13 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
         jLabel22 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -44,77 +47,50 @@ public class LoginUsuario extends javax.swing.JFrame {
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "LOGIN USUARIO", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18))); // NOI18N
+        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "LOGIN USUARIOS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Copperplate Gothic Light", 1, 18), new java.awt.Color(14, 90, 123))); // NOI18N
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/grupo (1).png"))); // NOI18N
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/perfil-del-usuario (3).png"))); // NOI18N
+        jPanel7.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 270, 260));
 
         jLabel20.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         jLabel20.setText("USUARIO : ");
+        jPanel7.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 282, 85, -1));
 
         jTextField7.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
+        jTextField7.setBorder(null);
+        jPanel7.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, 170, -1));
 
         jLabel21.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         jLabel21.setText("CONTRASEÑA : ");
+        jPanel7.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, -1, -1));
+
+        jPasswordField7.setBorder(null);
+        jPanel7.add(jPasswordField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, 170, -1));
 
         jButton13.setBackground(new java.awt.Color(255, 255, 255));
         jButton13.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/ingresar (2).png"))); // NOI18N
         jButton13.setText("INICIAR SESIÓN ");
+        jPanel7.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(199, 441, -1, -1));
 
         jButton14.setBackground(new java.awt.Color(255, 255, 255));
         jButton14.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/anadir-amigo.png"))); // NOI18N
         jButton14.setText("REGISTRARSE");
+        jPanel7.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 441, -1, -1));
+        jPanel7.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, -1, 0));
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(52, 52, 52)
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jPasswordField7, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jLabel21)
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addComponent(jButton14)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton13))))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel20)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel21)
-                    .addComponent(jPasswordField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton14)
-                    .addComponent(jButton13))
-                .addGap(92, 92, 92))
-        );
+        jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel7.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, 190, -1));
 
-        jPanel9.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 380, 430));
+        jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel7.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, 190, 10));
 
-        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/fondoini2.jpg"))); // NOI18N
-        jPanel9.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 520));
+        jPanel9.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 380, 490));
+
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/fond.jpg"))); // NOI18N
+        jPanel9.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 780, 560));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -124,7 +100,7 @@ public class LoginUsuario extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -176,6 +152,9 @@ public class LoginUsuario extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JPasswordField jPasswordField7;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTextField jTextField7;
     // End of variables declaration//GEN-END:variables
 }

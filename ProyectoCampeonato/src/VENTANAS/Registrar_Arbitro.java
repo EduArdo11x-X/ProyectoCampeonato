@@ -10,10 +10,18 @@ package VENTANAS;
  * @author HP
  */
 public class Registrar_Arbitro extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Registrar_Arbitro
-     */
+    
+     String cedula_per="";
+     String Primer_nombre="";
+     String Segundo_nombre="";
+     String Primer_apellido="";
+     String Segunda_Apellido="";
+     String edad="";
+     String telefono="";
+     String id_arbitro="";
+     String num_campeonato="";
+     String experiencia="";
+    
     public Registrar_Arbitro() {
         initComponents();
     }
