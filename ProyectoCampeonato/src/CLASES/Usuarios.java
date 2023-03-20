@@ -14,8 +14,8 @@ public class Usuarios {
     private String Id_Usuario;
     private String usuario_cedula_per;
     private String usuario_campeonato_id;
-    private String Correo_Usuario;
-    private String contraseña_usuario;
+     String Correo_Usuario;
+     String contraseña_usuario;
 
     public Usuarios(String Id_Usuario, String usuario_cedula_per, String usuario_campeonato_id, String Correo_Usuario, String contraseña_usuario) {
         this.Id_Usuario = Id_Usuario;

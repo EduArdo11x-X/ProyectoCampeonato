@@ -5,18 +5,37 @@
  */
 package VENTANAS;
 
+import CLASES.Persona;
+import CLASES.Usuarios;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author user
  */
 public class Eliminar_Usuario extends javax.swing.JFrame {
-
-    /**
+    
+    ArrayList<Persona> Listapersona = new ArrayList<Persona>();    /**
      * Creates new form Eliminar_Usuario
      */
     public Eliminar_Usuario() {
         initComponents();
     }
+    
+   /* public void mostrardatos(){
+        
+        if(Registro_Usuario.Listausuario.isEmpty()){
+            JOptionPane.showMessageDialog(rootPane, "No hay usuarios en el sistema");
+        } else{
+            for(int i=0;Registro_Usuario.Listausuario.size();i++){
+            
+        }
+        }
+        
+    
+    }
+    */
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -39,7 +58,7 @@ public class Eliminar_Usuario extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabla1 = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,7 +83,7 @@ public class Eliminar_Usuario extends javax.swing.JFrame {
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/eliminar.png"))); // NOI18N
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabla1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -78,7 +97,7 @@ public class Eliminar_Usuario extends javax.swing.JFrame {
                 "Cedula", "Nombre", "Apellido", "Edad", "Nacionalidad", "Telefono ", "Email "
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tabla1);
 
         jButton4.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/izquierda.png"))); // NOI18N
@@ -198,7 +217,7 @@ public class Eliminar_Usuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable tabla1;
     // End of variables declaration//GEN-END:variables
 }

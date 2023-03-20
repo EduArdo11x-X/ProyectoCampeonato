@@ -5,7 +5,10 @@
  */
 package VENTANAS;
 
+import CLASES.Persona;
+import CLASES.Usuarios;
 import java.awt.Color;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,6 +16,22 @@ import javax.swing.JOptionPane;
  * @author HP
  */
 public class Registro_Usuario extends javax.swing.JFrame {
+
+    ArrayList<Usuarios> Listausuario = new ArrayList<Usuarios>();
+    ArrayList<Persona> Listapersona = new ArrayList<Persona>();
+
+
+    String Id_Usuario = "";
+    String usuario_cedula_per = "";
+    String Primer_nombre = "";
+    String Segundo_nombre = "";
+    String Primer_apellido = "";
+    String Segunda_Apellido = "";
+    String edad = "";
+    String telefono = "";
+    String usuario_campeonato_id = "";
+    String Correo_Usuario = "";
+    String contraseña_usuario = "";
 
     /**
      * Creates new form Registro_Usuario
@@ -360,6 +379,11 @@ public class Registro_Usuario extends javax.swing.JFrame {
         btregistrar_usu.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         btregistrar_usu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/disquete.png"))); // NOI18N
         btregistrar_usu.setText("REGISTRAR");
+        btregistrar_usu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btregistrar_usuActionPerformed(evt);
+            }
+        });
         jPanel1.add(btregistrar_usu, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 540, -1, -1));
 
         txtgenero_usu.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -450,11 +474,11 @@ public class Registro_Usuario extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 972, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 617, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 635, Short.MAX_VALUE)
         );
 
         pack();
@@ -469,52 +493,88 @@ public class Registro_Usuario extends javax.swing.JFrame {
     }//GEN-LAST:event_txtcedula_usuKeyReleased
 
     private void txtprimernombre_usuKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtprimernombre_usuKeyReleased
-validar();        // TODO add your handling code here:
+        validar();        // TODO add your handling code here:
     }//GEN-LAST:event_txtprimernombre_usuKeyReleased
 
     private void txtprimerapellido_usuKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtprimerapellido_usuKeyReleased
-validar();        // TODO add your handling code here:
+        validar();        // TODO add your handling code here:
     }//GEN-LAST:event_txtprimerapellido_usuKeyReleased
 
     private void txtgenero_usuKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtgenero_usuKeyReleased
-validar();        // TODO add your handling code here:
+        validar();        // TODO add your handling code here:
     }//GEN-LAST:event_txtgenero_usuKeyReleased
 
     private void txttelefono_usuKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txttelefono_usuKeyReleased
-validar();        // TODO add your handling code here:
+        validar();        // TODO add your handling code here:
     }//GEN-LAST:event_txttelefono_usuKeyReleased
 
     private void txtnacionalidad_usuKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnacionalidad_usuKeyReleased
-validar();        // TODO add your handling code here:
+        validar();        // TODO add your handling code here:
     }//GEN-LAST:event_txtnacionalidad_usuKeyReleased
 
     private void txtemail_usuKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtemail_usuKeyReleased
-validar();        // TODO add your handling code here:
+        validar();        // TODO add your handling code here:
     }//GEN-LAST:event_txtemail_usuKeyReleased
 
     private void txtid_usuKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtid_usuKeyReleased
-validar();
+        validar();
 // TODO add your handling code here:
     }//GEN-LAST:event_txtid_usuKeyReleased
 
     private void txtpassword_usuKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpassword_usuKeyReleased
-validar();        // TODO add your handling code here:
+        validar();        // TODO add your handling code here:
     }//GEN-LAST:event_txtpassword_usuKeyReleased
 
     private void txtcc_usuKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcc_usuKeyReleased
-validar();        // TODO add your handling code here:
+        validar();        // TODO add your handling code here:
     }//GEN-LAST:event_txtcc_usuKeyReleased
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         this.dispose();
-        MenuPrincipal vsar100= new MenuPrincipal();
+        MenuPrincipal vsar100 = new MenuPrincipal();
         vsar100.setVisible(true);    // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btregistrar_usuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btregistrar_usuActionPerformed
+       
+        usuario_cedula_per = txtcedula_usu.getText();
+        Primer_nombre = txtprimernombre_usu.getText();
+        Segundo_nombre = txtsegundonombre_usu.getText();
+        Primer_apellido = txtprimerapellido_usu.getText();
+        Segunda_Apellido = txtsegundoapellido_usu.getText();
+        txtgenero_usu.getText();
+//txtedad_usu.;
+        telefono = txttelefono_usu.getText();
+//txtnacionalidad_usu.getText();
+        Correo_Usuario = txtemail_usu.getText();
+        Id_Usuario = txtid_usu.getText();
+        contraseña_usuario = txtpassword_usu.getText();
+        contraseña_usuario = txtcc_usu.getText();
+
+        Usuarios registrar_usuario = new Usuarios();
+        Persona registrar_persona = new Persona();
+
+        registrar_usuario.setCedula_per(txtcedula_usu.getText());
+        registrar_persona.setPrimer_apellido(Primer_apellido);
+        registrar_persona.setSegundo_nombre(Segundo_nombre);
+        registrar_persona.setPrimer_apellido(Primer_apellido);
+        registrar_persona.setSegunda_Apellido(Segunda_Apellido);
+        registrar_persona.setEdad(edad);
+        registrar_persona.setTelefono(telefono);
+        registrar_usuario.setId_Usuario(Id_Usuario);
+        registrar_usuario.setCorreo_Usuario(Correo_Usuario);
+        registrar_usuario.setContraseña_usuario(contraseña_usuario);
+        
+        Listausuario.add(registrar_usuario);
+        Listapersona.add(registrar_persona);
+
+        JOptionPane.showMessageDialog(rootPane, "Ingresado correctamente");
+// TODO add your handling code here:
+    }//GEN-LAST:event_btregistrar_usuActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btregistrar_usu;
