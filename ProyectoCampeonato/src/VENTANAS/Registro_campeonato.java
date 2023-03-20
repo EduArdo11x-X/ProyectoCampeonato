@@ -106,7 +106,6 @@ public class Registro_campeonato extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         btguardar_camp = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         numero_equi = new javax.swing.JSpinner();
         fechafinal_camp = new com.toedter.calendar.JDateChooser();
         fechainicio_camp = new com.toedter.calendar.JDateChooser();
@@ -114,6 +113,7 @@ public class Registro_campeonato extends javax.swing.JFrame {
         requerido2 = new javax.swing.JLabel();
         requerido3 = new javax.swing.JLabel();
         requerido4 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -164,12 +164,6 @@ public class Registro_campeonato extends javax.swing.JFrame {
         btguardar_camp.setText("GUARDAR");
         jPanel1.add(btguardar_camp, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 470, 120, -1));
 
-        jButton4.setBackground(new java.awt.Color(255, 255, 255));
-        jButton4.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 10)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/izquierda.png"))); // NOI18N
-        jButton4.setText("REGRESAR");
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 470, 130, -1));
-
         numero_equi.setModel(new javax.swing.SpinnerNumberModel(4, 4, 20, 1));
         jPanel1.add(numero_equi, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 300, -1, -1));
 
@@ -208,6 +202,16 @@ public class Registro_campeonato extends javax.swing.JFrame {
         requerido4.setForeground(new java.awt.Color(255, 0, 0));
         jPanel1.add(requerido4, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 230, 80, 20));
 
+        jButton2.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/izquierda.png"))); // NOI18N
+        jButton2.setText("Regresar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 450, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -242,47 +246,22 @@ public class Registro_campeonato extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_fechafinal_campKeyTyped
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.dispose();
+        MenuPrincipal vsar100= new MenuPrincipal();
+        vsar100.setVisible(true);    // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Registro_campeonato.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Registro_campeonato.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Registro_campeonato.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Registro_campeonato.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Registro_campeonato().setVisible(true);
-            }
-        });
-    }
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btguardar_camp;
     private com.toedter.calendar.JDateChooser fechafinal_camp;
     private com.toedter.calendar.JDateChooser fechainicio_camp;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;

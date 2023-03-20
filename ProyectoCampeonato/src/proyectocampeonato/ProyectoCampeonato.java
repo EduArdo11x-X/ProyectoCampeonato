@@ -5,16 +5,23 @@
  */
 package proyectocampeonato;
 import CLASES.Conexion;
+import VENTANAS.LoginUsuario;
+import VENTANAS.MenuPrincipal;
 /**
  *
  * @author PC01
  */
 public class ProyectoCampeonato {
+    
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+         LoginUsuario mostrarInicio = new LoginUsuario();
+   mostrarInicio.setVisible(true);
+    
+        
      Conexion bd = new Conexion();
      bd.Conectarme();
 
