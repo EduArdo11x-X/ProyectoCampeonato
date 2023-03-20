@@ -5,6 +5,8 @@
  */
 package VENTANAS;
 
+import java.awt.Color;
+
 /**
  *
  * @author LENOVO
@@ -16,6 +18,45 @@ public class Modificar_Posicion extends javax.swing.JFrame {
      */
     public Modificar_Posicion() {
         initComponents();
+
+    }
+
+    public void validar() {
+
+        //NOMBRE POSI
+        if (nombre_posi.getText().isEmpty()) {
+            requerido2.setText("*");
+            requerido2.setForeground(Color.RED);
+
+        } else if (!nombre_posi.getText().matches("[[A-Za-z]\\s]*{3,30}")) {
+            requerido2.setText("*");
+            requerido2.setForeground(Color.RED);
+
+        } else {
+            requerido2.setText("✔");
+            requerido2.setForeground(Color.GREEN);
+
+        }
+
+        //DESCRIPCION
+        if (descri_posi.getText().isEmpty()) {
+            requerido3.setText("*");
+            requerido3.setForeground(Color.RED);
+
+        } else {
+            requerido3.setText("✔");
+            requerido3.setForeground(Color.GREEN);
+
+        }
+
+        if (nombre_posi.getText().isEmpty()
+                || descri_posi.getText().isEmpty()
+                || requerido2.getText().equals("*")
+                || requerido3.getText().equals("*")) {
+            registrar_posi.setEnabled(false);
+        } else {
+            registrar_posi.setEnabled(true);
+        }
     }
 
     /**
@@ -31,106 +72,72 @@ public class Modificar_Posicion extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        id_posi = new javax.swing.JTextField();
+        nombre_posi = new javax.swing.JTextField();
+        registrar_posi = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        descri_posi = new javax.swing.JTextField();
+        requerido2 = new javax.swing.JLabel();
+        requerido3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "MODIFICAR POSICION", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Copperplate Gothic Bold", 1, 24))); // NOI18N
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 14)); // NOI18N
         jLabel1.setText("Id Posicion");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(345, 95, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 14)); // NOI18N
         jLabel2.setText("Nombre Posicion");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(345, 197, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 14)); // NOI18N
         jLabel3.setText("Descripcion Posicion");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(345, 318, -1, -1));
+        jPanel1.add(id_posi, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 136, 170, -1));
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+        nombre_posi.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                nombre_posiKeyReleased(evt);
             }
         });
+        jPanel1.add(nombre_posi, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 250, 170, -1));
 
-        jButton1.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/disquete.png"))); // NOI18N
-        jButton1.setText("GUARDAR");
+        registrar_posi.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
+        registrar_posi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/disquete.png"))); // NOI18N
+        registrar_posi.setText("GUARDAR");
+        jPanel1.add(registrar_posi, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 481, -1, -1));
 
         jButton2.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/izquierda (1).png"))); // NOI18N
         jButton2.setText("REGRESAR");
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(382, 481, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/lupa (1).png"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(531, 136, -1, -1));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/CANCHA1.png"))); // NOI18N
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 111, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1)
-                    .addComponent(jLabel7))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(83, 83, 83)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel3)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(165, 165, 165)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel4)))
-                        .addGap(0, 87, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(120, 120, 120)
-                        .addComponent(jButton2)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(79, 79, 79)
-                        .addComponent(jLabel7))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(24, 24, 24)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(37, 37, 37)
-                        .addComponent(jLabel2)
-                        .addGap(34, 34, 34)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(46, 46, 46)
-                        .addComponent(jLabel3)))
-                .addGap(1, 1, 1)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(89, 89, 89)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap(42, Short.MAX_VALUE))
-        );
+        descri_posi.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                descri_posiKeyReleased(evt);
+            }
+        });
+        jPanel1.add(descri_posi, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 350, 190, 70));
+
+        requerido2.setFont(new java.awt.Font("Copperplate", 1, 13)); // NOI18N
+        requerido2.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(requerido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 250, 80, 20));
+
+        requerido3.setFont(new java.awt.Font("Copperplate", 1, 13)); // NOI18N
+        requerido3.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(requerido3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 370, 80, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -146,9 +153,13 @@ public class Modificar_Posicion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    private void descri_posiKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_descri_posiKeyReleased
+        validar();        // TODO add your handling code here:
+    }//GEN-LAST:event_descri_posiKeyReleased
+
+    private void nombre_posiKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombre_posiKeyReleased
+validar();        // TODO add your handling code here:
+    }//GEN-LAST:event_nombre_posiKeyReleased
 
     /**
      * @param args the command line arguments
@@ -186,7 +197,8 @@ public class Modificar_Posicion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTextField descri_posi;
+    private javax.swing.JTextField id_posi;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -194,8 +206,9 @@ public class Modificar_Posicion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField nombre_posi;
+    private javax.swing.JButton registrar_posi;
+    private javax.swing.JLabel requerido2;
+    private javax.swing.JLabel requerido3;
     // End of variables declaration//GEN-END:variables
 }

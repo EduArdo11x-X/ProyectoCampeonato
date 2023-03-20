@@ -12,18 +12,18 @@ package CLASES;
 public class Partido {
     
     private String Id_Partido;
-    private String Id_arbitro;
-    private String Id_Cancha;
-    private String id_categoria;
-    private String id_fecha;
+    private String partido_id_arbitro;
+    private String partido_id_cancha;
+    private String partido_id_categoria;
+    private String partido_id_fecha;
     private String Horario_partido;
 
-    public Partido(String Id_Partido, String Id_arbitro, String Id_Cancha, String id_categoria, String id_fecha, String Horario_partido) {
+    public Partido(String Id_Partido, String partido_id_arbitro, String partido_id_cancha, String partido_id_categoria, String partido_id_fecha, String Horario_partido) {
         this.Id_Partido = Id_Partido;
-        this.Id_arbitro = Id_arbitro;
-        this.Id_Cancha = Id_Cancha;
-        this.id_categoria = id_categoria;
-        this.id_fecha = id_fecha;
+        this.partido_id_arbitro = partido_id_arbitro;
+        this.partido_id_cancha = partido_id_cancha;
+        this.partido_id_categoria = partido_id_categoria;
+        this.partido_id_fecha = partido_id_fecha;
         this.Horario_partido = Horario_partido;
     }
 
@@ -38,36 +38,36 @@ public class Partido {
         this.Id_Partido = Id_Partido;
     }
 
-    public String getId_arbitro() {
-        return Id_arbitro;
+    public String getPartido_id_arbitro() {
+        return partido_id_arbitro;
     }
 
-    public void setId_arbitro(String Id_arbitro) {
-        this.Id_arbitro = Id_arbitro;
+    public void setPartido_id_arbitro(String partido_id_arbitro) {
+        this.partido_id_arbitro = partido_id_arbitro;
     }
 
-    public String getId_Cancha() {
-        return Id_Cancha;
+    public String getPartido_id_cancha() {
+        return partido_id_cancha;
     }
 
-    public void setId_Cancha(String Id_Cancha) {
-        this.Id_Cancha = Id_Cancha;
+    public void setPartido_id_cancha(String partido_id_cancha) {
+        this.partido_id_cancha = partido_id_cancha;
     }
 
-    public String getId_categoria() {
-        return id_categoria;
+    public String getPartido_id_categoria() {
+        return partido_id_categoria;
     }
 
-    public void setId_categoria(String id_categoria) {
-        this.id_categoria = id_categoria;
+    public void setPartido_id_categoria(String partido_id_categoria) {
+        this.partido_id_categoria = partido_id_categoria;
     }
 
-    public String getId_fecha() {
-        return id_fecha;
+    public String getPartido_id_fecha() {
+        return partido_id_fecha;
     }
 
-    public void setId_fecha(String id_fecha) {
-        this.id_fecha = id_fecha;
+    public void setPartido_id_fecha(String partido_id_fecha) {
+        this.partido_id_fecha = partido_id_fecha;
     }
 
     public String getHorario_partido() {
@@ -80,9 +80,8 @@ public class Partido {
 
     @Override
     public String toString() {
-        return "Partido{" + "Id_Partido=" + Id_Partido + ", Id_arbitro=" + Id_arbitro + ", Id_Cancha=" + Id_Cancha + ", id_categoria=" + id_categoria + ", id_fecha=" + id_fecha + ", Horario_partido=" + Horario_partido + '}';
+        return "Partido{" + "Id_Partido=" + Id_Partido + ", partido_id_arbitro=" + partido_id_arbitro + ", partido_id_cancha=" + partido_id_cancha + ", partido_id_categoria=" + partido_id_categoria + ", partido_id_fecha=" + partido_id_fecha + ", Horario_partido=" + Horario_partido + '}';
     }
-    
     
     
 }

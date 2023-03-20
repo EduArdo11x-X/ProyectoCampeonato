@@ -11,14 +11,14 @@ package CLASES;
  */
 public class Equipo {
     private String id_equipo;
-    private String id_entrenador;
+    private String equipo_id_entrenador;
     private String nombre_fundador;
     private int anio_creacion_equipo;
     private int numero_jugadores;
 
-    public Equipo(String id_equipo, String id_entrenador, String nombre_fundador, int anio_creacion_equipo, int numero_jugadores) {
+    public Equipo(String id_equipo, String equipo_id_entrenador, String nombre_fundador, int anio_creacion_equipo, int numero_jugadores) {
         this.id_equipo = id_equipo;
-        this.id_entrenador = id_entrenador;
+        this.equipo_id_entrenador = equipo_id_entrenador;
         this.nombre_fundador = nombre_fundador;
         this.anio_creacion_equipo = anio_creacion_equipo;
         this.numero_jugadores = numero_jugadores;
@@ -36,11 +36,11 @@ public class Equipo {
     }
 
     public String getId_entrenador() {
-        return id_entrenador;
+        return equipo_id_entrenador;
     }
 
     public void setId_entrenador(String id_entrenador) {
-        this.id_entrenador = id_entrenador;
+        this.equipo_id_entrenador = id_entrenador;
     }
 
     public String getNombre_fundador() {
@@ -69,7 +69,7 @@ public class Equipo {
 
     @Override
     public String toString() {
-        return "Equipo{" + "id_equipo=" + id_equipo + ", id_entrenador=" + id_entrenador + ", nombre_fundador=" + nombre_fundador + ", anio_creacion_equipo=" + anio_creacion_equipo + ", numero_jugadores=" + numero_jugadores + '}';
+        return "Equipo{" + "id_equipo=" + id_equipo + ", id_entrenador=" + equipo_id_entrenador + ", nombre_fundador=" + nombre_fundador + ", anio_creacion_equipo=" + anio_creacion_equipo + ", numero_jugadores=" + numero_jugadores + '}';
     }
 
     

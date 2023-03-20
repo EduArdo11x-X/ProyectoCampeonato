@@ -5,24 +5,25 @@
  */
 package CLASES;
 
+import java.util.Date;
+
 /**
  *
  * @author user
  */
-public class Campeonato_Partidos extends Campeonato {
+public class Campeonato_Partidos {
     
    private String id_detalle_juego;
-   private String Id_partido;
+   private String detalle_id_campeonato;
+   private String detalle_id_partido;
 
-    public Campeonato_Partidos(String id_detalle_juego, String Id_partido, String Campeonato_Id, String Campeonato_nombre, int campeonato_numeros_Equipo, String Campeonato_fecha_inicio, String Campeonato_fecha_final) {
-        super(Campeonato_Id, Campeonato_nombre, campeonato_numeros_Equipo, Campeonato_fecha_inicio, Campeonato_fecha_final);
+    public Campeonato_Partidos(String id_detalle_juego, String detalle_id_campeonato, String detalle_id_partido) {
         this.id_detalle_juego = id_detalle_juego;
-        this.Id_partido = Id_partido;
+        this.detalle_id_campeonato = detalle_id_campeonato;
+        this.detalle_id_partido = detalle_id_partido;
     }
 
-    public Campeonato_Partidos(String id_detalle_juego, String Id_partido) {
-        this.id_detalle_juego = id_detalle_juego;
-        this.Id_partido = Id_partido;
+    public Campeonato_Partidos() {
     }
 
     public String getId_detalle_juego() {
@@ -33,17 +34,26 @@ public class Campeonato_Partidos extends Campeonato {
         this.id_detalle_juego = id_detalle_juego;
     }
 
-    public String getId_partido() {
-        return Id_partido;
+    public String getDetalle_id_campeonato() {
+        return detalle_id_campeonato;
     }
 
-    public void setId_partido(String Id_partido) {
-        this.Id_partido = Id_partido;
+    public void setDetalle_id_campeonato(String detalle_id_campeonato) {
+        this.detalle_id_campeonato = detalle_id_campeonato;
+    }
+
+    public String getId_partido() {
+        return detalle_id_partido;
+    }
+
+    public void setId_partido(String detalle_id_partido) {
+        this.detalle_id_partido = detalle_id_partido;
     }
 
     @Override
     public String toString() {
-        return "Campeonato_Partidos{" + "id_detalle_juego=" + id_detalle_juego + ", Id_partido=" + Id_partido + '}';
+        return "Campeonato_Partidos{" + "id_detalle_juego=" + id_detalle_juego + ", detalle_id_campeonato=" + detalle_id_campeonato + ", Id_partido=" + detalle_id_partido + '}';
     }
 
+   
 }

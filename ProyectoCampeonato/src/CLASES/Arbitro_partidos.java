@@ -11,36 +11,49 @@ package CLASES;
  */
 public class Arbitro_partidos {
     
-    private String id_arbitro;
-    private String id_partido;
+    private String info_id_partidos;
+    
+    private String info_id_arbitro;
+    private String info_id_partido;
 
-    public Arbitro_partidos(String id_arbitro, String id_partido) {
-        this.id_arbitro = id_arbitro;
-        this.id_partido = id_partido;
+    public Arbitro_partidos(String info_id_partidos, String info_id_arbitro, String info_id_partido) {
+        this.info_id_partidos = info_id_partidos;
+        this.info_id_arbitro = info_id_arbitro;
+        this.info_id_partido = info_id_partido;
     }
 
     public Arbitro_partidos() {
     }
 
-    public String getId_arbitro() {
-        return id_arbitro;
+    public String getInfo_id_partidos() {
+        return info_id_partidos;
     }
 
-    public void setId_arbitro(String id_arbitro) {
-        this.id_arbitro = id_arbitro;
+    public void setInfo_id_partidos(String info_id_partidos) {
+        this.info_id_partidos = info_id_partidos;
     }
 
-    public String getId_partido() {
-        return id_partido;
+    public String getInfo_id_arbitro() {
+        return info_id_arbitro;
     }
 
-    public void setId_partido(String id_partido) {
-        this.id_partido = id_partido;
+    public void setInfo_id_arbitro(String info_id_arbitro) {
+        this.info_id_arbitro = info_id_arbitro;
+    }
+
+    public String getInfo_id_partido() {
+        return info_id_partido;
+    }
+
+    public void setInfo_id_partido(String info_id_partido) {
+        this.info_id_partido = info_id_partido;
     }
 
     @Override
     public String toString() {
-        return "Arbitro_partidos{" + "id_arbitro=" + id_arbitro + ", id_partido=" + id_partido + '}';
+        return "Arbitro_partidos{" + "info_id_partidos=" + info_id_partidos + ", info_id_arbitro=" + info_id_arbitro + ", info_id_partido=" + info_id_partido + '}';
     }
+
+    
     
 }
