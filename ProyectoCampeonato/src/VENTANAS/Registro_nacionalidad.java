@@ -5,6 +5,8 @@
  */
 package VENTANAS;
 
+import CLASES.Conexion;
+
 /**
  *
  * @author EDU
@@ -69,12 +71,17 @@ public class Registro_nacionalidad extends javax.swing.JFrame {
         registrar_nacionalidad.setBackground(new java.awt.Color(255, 255, 255));
         registrar_nacionalidad.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         registrar_nacionalidad.setText("REGISTRAR");
-        jPanel6.add(registrar_nacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, -1, -1));
+        registrar_nacionalidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registrar_nacionalidadActionPerformed(evt);
+            }
+        });
+        jPanel6.add(registrar_nacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, -1, -1));
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         jButton2.setText("REGRESAR ");
-        jPanel6.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 350, -1, -1));
+        jPanel6.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, -1, -1));
 
         requerido1.setFont(new java.awt.Font("Copperplate", 1, 13)); // NOI18N
         requerido1.setForeground(new java.awt.Color(255, 0, 0));
@@ -109,6 +116,11 @@ public class Registro_nacionalidad extends javax.swing.JFrame {
     private void nombre_nacionalidadKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombre_nacionalidadKeyReleased
            // TODO add your handling code here:
     }//GEN-LAST:event_nombre_nacionalidadKeyReleased
+     
+
+    private void registrar_nacionalidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrar_nacionalidadActionPerformed
+        
+    }//GEN-LAST:event_registrar_nacionalidadActionPerformed
 
     /**
      * @param args the command line arguments
@@ -146,21 +158,11 @@ public class Registro_nacionalidad extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField id_nacionalidad;
-    private javax.swing.JTextField id_nacionalidad1;
-    private javax.swing.JTextField id_nacionalidad2;
-    private javax.swing.JTextField id_nacionalidad3;
-    private javax.swing.JTextField id_nacionalidad4;
     private javax.swing.JTextField id_nacionalidad5;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JTextField nombre_nacionalidad;
     private javax.swing.JButton registrar_nacionalidad;
