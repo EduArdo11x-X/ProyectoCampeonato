@@ -219,7 +219,6 @@ public class Registro_Usuario extends javax.swing.JFrame {
         txtemail_usu = new javax.swing.JTextField();
         txtid_usu = new javax.swing.JTextField();
         btregistrar_usu = new javax.swing.JButton();
-        btregresar_usu = new javax.swing.JButton();
         txtgenero_usu = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         txtnacionalidad_usu = new javax.swing.JTextField();
@@ -236,6 +235,7 @@ public class Registro_Usuario extends javax.swing.JFrame {
         requerido10 = new javax.swing.JLabel();
         requerido11 = new javax.swing.JLabel();
         txtedad_usu = new javax.swing.JSpinner();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -362,12 +362,6 @@ public class Registro_Usuario extends javax.swing.JFrame {
         btregistrar_usu.setText("REGISTRAR");
         jPanel1.add(btregistrar_usu, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 540, -1, -1));
 
-        btregresar_usu.setBackground(new java.awt.Color(255, 255, 255));
-        btregresar_usu.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
-        btregresar_usu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/izquierda.png"))); // NOI18N
-        btregresar_usu.setText("REGRESAR ");
-        jPanel1.add(btregresar_usu, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 540, -1, -1));
-
         txtgenero_usu.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtgenero_usuKeyReleased(evt);
@@ -442,6 +436,16 @@ public class Registro_Usuario extends javax.swing.JFrame {
         txtedad_usu.setModel(new javax.swing.SpinnerNumberModel(18, 18, 40, 1));
         jPanel1.add(txtedad_usu, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 70, -1, -1));
 
+        jButton2.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/izquierda.png"))); // NOI18N
+        jButton2.setText("Regresar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 530, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -501,45 +505,20 @@ validar();        // TODO add your handling code here:
 validar();        // TODO add your handling code here:
     }//GEN-LAST:event_txtcc_usuKeyReleased
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.dispose();
+        MenuPrincipal vsar100= new MenuPrincipal();
+        vsar100.setVisible(true);    // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Registro_Usuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Registro_Usuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Registro_Usuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Registro_Usuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Registro_Usuario().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btregistrar_usu;
-    private javax.swing.JButton btregresar_usu;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
