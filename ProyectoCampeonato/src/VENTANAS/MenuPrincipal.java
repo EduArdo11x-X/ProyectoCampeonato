@@ -538,7 +538,7 @@ this.dispose();
 
     private void jMenuItem31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem31ActionPerformed
         this.dispose();
-        Registro_nacionalidad vsar22= new Registro_nacionalidad();
+        Registro_Nacionaliad vsar22= new Registro_Nacionaliad();
             vsar22.setVisible(true); 
     }//GEN-LAST:event_jMenuItem31ActionPerformed
 
