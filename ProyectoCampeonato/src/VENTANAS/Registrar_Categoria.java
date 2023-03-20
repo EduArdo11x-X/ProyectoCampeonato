@@ -67,7 +67,19 @@ public class Registrar_Categoria extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         jLabel4.setText("DESCRIPCION DE CATEGORIA : ");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 210, -1));
+
+        jTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField3KeyTyped(evt);
+            }
+        });
         jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 180, 110));
+
+        jTextField4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField4KeyTyped(evt);
+            }
+        });
         jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 180, -1));
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
@@ -113,6 +125,27 @@ public class Registrar_Categoria extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jTextField4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField4KeyTyped
+        char aux = evt.getKeyChar();
+        char aux1 = evt.getKeyChar();
+        boolean Mayus =aux >= 65 && aux < 90;
+        boolean minus = aux1 >= 94 && aux1 < 122;
+        boolean ret = aux ==8;
+        boolean ent = aux == 13;
+        
+        if (Mayus ==false && minus == false && ret== false && ent == false){
+            System.out.println(evt.getKeyChar());
+            evt.consume();
+            
+        }else if(jTextField2.getText().length()>=20){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextField4KeyTyped
+
+    private void jTextField3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3KeyTyped
 
     /**
      * @param args the command line arguments

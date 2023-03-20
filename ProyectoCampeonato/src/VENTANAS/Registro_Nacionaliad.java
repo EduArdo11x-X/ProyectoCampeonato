@@ -5,6 +5,8 @@
  */
 package VENTANAS;
 
+import CLASES.Conexion;
+
 /**
  *
  * @author HP
@@ -53,6 +55,11 @@ public class Registro_Nacionaliad extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/disquete.png"))); // NOI18N
         jButton1.setText("REGISTRAR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
@@ -111,6 +118,10 @@ public class Registro_Nacionaliad extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+ Conexion bd = new Conexion();
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        bd.Ingreso(String.format("INSERT INTO datos VALUES(%d,'%s');"+"",Integer.parseInt(this.jTextField3.getText()),(this.jTextField4.getText())));
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

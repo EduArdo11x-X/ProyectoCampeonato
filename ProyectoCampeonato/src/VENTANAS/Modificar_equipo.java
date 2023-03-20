@@ -87,7 +87,6 @@ public class Modificar_equipo extends javax.swing.JFrame {
         id_equipo = new javax.swing.JTextField();
         id_entrenador = new javax.swing.JTextField();
         numero_jugadores = new javax.swing.JTextField();
-        año_creacion = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
@@ -96,6 +95,9 @@ public class Modificar_equipo extends javax.swing.JFrame {
         requerido2 = new javax.swing.JLabel();
         modificar_equipo = new javax.swing.JButton();
         nombre_fundador = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -134,9 +136,6 @@ public class Modificar_equipo extends javax.swing.JFrame {
         });
         jPanel1.add(numero_jugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 120, -1));
 
-        año_creacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(año_creacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, -1, -1));
-
         jLabel6.setText("Ingrese por favor el ID del equipo a modificar:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 34, -1, -1));
 
@@ -148,7 +147,7 @@ public class Modificar_equipo extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 50, 30, 30));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 100, 30, 30));
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, 100, -1));
 
         requerido3.setFont(new java.awt.Font("Copperplate", 1, 13)); // NOI18N
@@ -164,14 +163,36 @@ public class Modificar_equipo extends javax.swing.JFrame {
         jPanel1.add(requerido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 140, 180, 20));
 
         modificar_equipo.setText("MODIFICAR");
-        jPanel1.add(modificar_equipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, -1, -1));
+        jPanel1.add(modificar_equipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, -1, -1));
 
+        nombre_fundador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nombre_fundadorActionPerformed(evt);
+            }
+        });
         nombre_fundador.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 nombre_fundadorKeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                nombre_fundadorKeyTyped(evt);
+            }
         });
         jPanel1.add(nombre_fundador, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 120, -1));
+
+        jButton3.setBackground(new java.awt.Color(153, 153, 153));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/lupa (1).png"))); // NOI18N
+        jButton3.setBorder(null);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 50, 30, 30));
+        jPanel1.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, 130, -1));
+
+        jButton1.setText("Cancelar");
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 273, -1, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -202,6 +223,38 @@ validar();        // TODO add your handling code here:
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void nombre_fundadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombre_fundadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nombre_fundadorActionPerformed
+
+    private void nombre_fundadorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombre_fundadorKeyTyped
+        
+        char aux = evt.getKeyChar();
+        boolean ced =aux >=48 && aux <58;
+        boolean ret = aux ==8;
+        boolean ent =aux == 13;
+        
+        if(ced == false && ret == false && ent == false){
+            System.out.println(evt.getKeyChar());
+            evt.consume();
+        } else if (nombre_fundador.getText().length()>9){
+        evt.consume();;
+        
+        
+        
+    }
+        
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_nombre_fundadorKeyTyped
 
     /**
      * @param args the command line arguments
@@ -239,10 +292,12 @@ validar();        // TODO add your handling code here:
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> año_creacion;
     private javax.swing.JTextField id_entrenador;
     private javax.swing.JTextField id_equipo;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

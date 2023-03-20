@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package proyectocampeonato;
-
+import CLASES.Conexion;
 /**
  *
  * @author PC01
@@ -15,7 +15,8 @@ public class ProyectoCampeonato {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-System.out.println("    Hola muchachos");
+     Conexion bd = new Conexion();
+     bd.Conectarme();
 
     }
     

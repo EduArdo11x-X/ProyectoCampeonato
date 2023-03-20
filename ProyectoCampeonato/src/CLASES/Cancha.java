@@ -11,9 +11,9 @@ package CLASES;
  */
 public class Cancha{
 
-    private String Id_Cancha;
-    private String Nom_Cancha;
-    private String Cap_Cancha;
+    private String Id_Cancha = null;
+    private String Nom_Cancha= null ;
+    private String Cap_Cancha = null;
 
     public Cancha(String Id_Cancha, String Nom_Cancha, String Cap_Cancha) {
         this.Id_Cancha = Id_Cancha;

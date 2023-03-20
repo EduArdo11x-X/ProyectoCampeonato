@@ -39,8 +39,8 @@ public class Registar_Equipos extends javax.swing.JFrame {
         jComboBox2 = new javax.swing.JComboBox<>();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jTextField4 = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,18 +76,23 @@ public class Registar_Equipos extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, 224, -1));
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1KeyTyped(evt);
+            }
+        });
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 224, -1));
 
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 224, -1));
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 224, -1));
+        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, 224, -1));
+        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, 224, -1));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "15", "17", "18", "19", "20" }));
-        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(287, 470, 120, -1));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20" }));
+        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 470, 160, -1));
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
@@ -111,9 +116,6 @@ public class Registar_Equipos extends javax.swing.JFrame {
         });
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 560, 120, -1));
 
-        jTextField4.setText("AAAA/MM/DD");
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 420, 150, -1));
-
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/lupa (1).png"))); // NOI18N
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -121,7 +123,8 @@ public class Registar_Equipos extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 360, 70, 30));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 370, 70, 30));
+        jPanel1.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 420, 170, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -159,6 +162,23 @@ public class Registar_Equipos extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
+        char aux = evt.getKeyChar();
+        char aux1 = evt.getKeyChar();
+        boolean Mayus =aux >= 65 && aux < 90;
+        boolean minus = aux1 >= 94 && aux1 < 122;
+        boolean ret = aux ==8;
+        boolean ent = aux == 13;
+        
+        if (Mayus ==false && minus == false && ret== false && ent == false){
+            System.out.println(evt.getKeyChar());
+            evt.consume();
+            
+        }else if(jTextField1.getText().length()>=20){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextField1KeyTyped
 
     /**
      * @param args the command line arguments
@@ -201,6 +221,7 @@ public class Registar_Equipos extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JComboBox<String> jComboBox2;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -211,6 +232,5 @@ public class Registar_Equipos extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }

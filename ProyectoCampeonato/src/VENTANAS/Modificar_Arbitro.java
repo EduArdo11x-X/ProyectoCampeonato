@@ -77,14 +77,38 @@ public class Modificar_Arbitro extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         jLabel3.setText("PRIMER NOMBRE : ");
 
+        jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField2KeyTyped(evt);
+            }
+        });
+
         jLabel4.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         jLabel4.setText("SEGUNDO NOMBRE : ");
+
+        jTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField3KeyTyped(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         jLabel5.setText("PRIMER APELLIDO : ");
 
+        jTextField4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField4KeyTyped(evt);
+            }
+        });
+
         jLabel7.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         jLabel7.setText("SEGUNDO APELLIDO : ");
+
+        jTextField5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField5KeyTyped(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         jLabel8.setText("GÈNERO : ");
@@ -94,6 +118,12 @@ public class Modificar_Arbitro extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         jLabel10.setText("TELÈFONO : ");
+
+        jTextField8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField8KeyTyped(evt);
+            }
+        });
 
         jLabel12.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         jLabel12.setText("NACIONALDAD : ");
@@ -271,6 +301,89 @@ public class Modificar_Arbitro extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyTyped
+        char aux = evt.getKeyChar();
+        char aux1 = evt.getKeyChar();
+        boolean Mayus =aux >= 65 && aux < 90;
+        boolean minus = aux1 >= 94 && aux1 < 122;
+        boolean ret = aux ==8;
+        boolean ent = aux == 13;
+        
+        if (Mayus ==false && minus == false && ret== false && ent == false){
+            System.out.println(evt.getKeyChar());
+            evt.consume();
+            
+        }else if(jTextField2.getText().length()>=20){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextField2KeyTyped
+
+    private void jTextField3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyTyped
+        char aux = evt.getKeyChar();
+        char aux1 = evt.getKeyChar();
+        boolean Mayus =aux >= 65 && aux < 90;
+        boolean minus = aux1 >= 94 && aux1 < 122;
+        boolean ret = aux ==8;
+        boolean ent = aux == 13;
+        
+        if (Mayus ==false && minus == false && ret== false && ent == false){
+            System.out.println(evt.getKeyChar());
+            evt.consume();
+            
+        }else if(jTextField3.getText().length()>=20){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextField3KeyTyped
+
+    private void jTextField4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField4KeyTyped
+        char aux = evt.getKeyChar();
+        char aux1 = evt.getKeyChar();
+        boolean Mayus =aux >= 65 && aux < 90;
+        boolean minus = aux1 >= 94 && aux1 < 122;
+        boolean ret = aux ==8;
+        boolean ent = aux == 13;
+        
+        if (Mayus ==false && minus == false && ret== false && ent == false){
+            System.out.println(evt.getKeyChar());
+            evt.consume();
+            
+        }else if(jTextField4.getText().length()>=20){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextField4KeyTyped
+
+    private void jTextField5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField5KeyTyped
+        char aux = evt.getKeyChar();
+        char aux1 = evt.getKeyChar();
+        boolean Mayus =aux >= 65 && aux < 90;
+        boolean minus = aux1 >= 94 && aux1 < 122;
+        boolean ret = aux ==8;
+        boolean ent = aux == 13;
+        
+        if (Mayus ==false && minus == false && ret== false && ent == false){
+            System.out.println(evt.getKeyChar());
+            evt.consume();
+            
+        }else if(jTextField5.getText().length()>=20){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextField5KeyTyped
+
+    private void jTextField8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField8KeyTyped
+         char aux = evt.getKeyChar();
+        boolean ced =aux >=48 && aux <58;
+        boolean ret = aux ==8;
+        boolean ent =aux == 13;
+        
+        if(ced == false && ret == false && ent == false){
+            System.out.println(evt.getKeyChar());
+            evt.consume();
+        } else if (jTextField1.getText().length()>9){
+        evt.consume();;
+   
+    }
+    }//GEN-LAST:event_jTextField8KeyTyped
 
     /**
      * @param args the command line arguments

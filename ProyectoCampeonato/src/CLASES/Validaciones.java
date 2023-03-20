@@ -12,6 +12,8 @@ import java.util.regex.Pattern;
 
 public class Validaciones {
     
+    
+    
     public boolean validarCedula(String cadena) {
         cadena = cadena.trim();
         boolean ban = false;

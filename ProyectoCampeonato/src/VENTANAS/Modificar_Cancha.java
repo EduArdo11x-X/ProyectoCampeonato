@@ -78,6 +78,11 @@ public class Modificar_Cancha extends javax.swing.JFrame {
                 jTextField5ActionPerformed(evt);
             }
         });
+        jTextField5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField5KeyTyped(evt);
+            }
+        });
 
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -206,6 +211,23 @@ public class Modificar_Cancha extends javax.swing.JFrame {
     private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField6ActionPerformed
+
+    private void jTextField5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField5KeyTyped
+       char aux = evt.getKeyChar();
+        char aux1 = evt.getKeyChar();
+        boolean Mayus =aux >= 65 && aux < 90;
+        boolean minus = aux1 >= 94 && aux1 < 122;
+        boolean ret = aux ==8;
+        boolean ent = aux == 13;
+        
+        if (Mayus ==false && minus == false && ret== false && ent == false){
+            System.out.println(evt.getKeyChar());
+            evt.consume();
+            
+        }else if(jTextField5.getText().length()>=20){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextField5KeyTyped
 
     /**
      * @param args the command line arguments

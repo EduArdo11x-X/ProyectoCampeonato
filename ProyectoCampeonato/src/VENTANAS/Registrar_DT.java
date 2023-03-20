@@ -114,18 +114,54 @@ public class Registrar_DT extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         jLabel7.setText("GÈNERO : ");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 50, -1, -1));
+
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1KeyTyped(evt);
+            }
+        });
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 360, 160, -1));
+
+        jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField2KeyTyped(evt);
+            }
+        });
         jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 410, 160, -1));
+
+        jTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField3KeyTyped(evt);
+            }
+        });
         jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 460, 160, -1));
+
+        jTextField4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField4KeyTyped(evt);
+            }
+        });
         jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 510, 160, -1));
+
+        jTextField5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField5KeyTyped(evt);
+            }
+        });
         jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 560, 160, -1));
         jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 40, 110, -1));
         jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 90, 110, -1));
+
+        jTextField8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField8KeyTyped(evt);
+            }
+        });
         jPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 140, 110, -1));
         jPanel1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 190, 110, -1));
         jPanel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 240, 190, -1));
-        jPanel1.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 120, -1));
-        jPanel1.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 340, 60, -1));
+        jPanel1.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 190, -1));
+        jPanel1.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 350, 160, -1));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/lupa (1).png"))); // NOI18N
@@ -178,6 +214,106 @@ public class Registrar_DT extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
+         char aux = evt.getKeyChar();
+        boolean ced =aux >=48 && aux <58;
+        boolean ret = aux ==8;
+        boolean ent =aux == 13;
+        
+        if(ced == false && ret == false && ent == false){
+            System.out.println(evt.getKeyChar());
+            evt.consume();
+        } else if (jTextField1.getText().length()>9){
+        evt.consume();;
+        
+        
+        
+    }
+    }//GEN-LAST:event_jTextField1KeyTyped
+
+    private void jTextField8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField8KeyTyped
+         char aux = evt.getKeyChar();
+        boolean ced =aux >=48 && aux <58;
+        boolean ret = aux ==8;
+        boolean ent =aux == 13;
+        
+        if(ced == false && ret == false && ent == false){
+            System.out.println(evt.getKeyChar());
+            evt.consume();
+        } else if (jTextField8.getText().length()>9){
+        evt.consume();;
+   
+    }
+    }//GEN-LAST:event_jTextField8KeyTyped
+
+    private void jTextField2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyTyped
+         char aux = evt.getKeyChar();
+        char aux1 = evt.getKeyChar();
+        boolean Mayus =aux >= 65 && aux < 90;
+        boolean minus = aux1 >= 94 && aux1 < 122;
+        boolean ret = aux ==8;
+        boolean ent = aux == 13;
+        
+        if (Mayus ==false && minus == false && ret== false && ent == false){
+            System.out.println(evt.getKeyChar());
+            evt.consume();
+            
+        }else if(jTextField2.getText().length()>=20){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextField2KeyTyped
+
+    private void jTextField3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyTyped
+        char aux = evt.getKeyChar();
+        char aux1 = evt.getKeyChar();
+        boolean Mayus =aux >= 65 && aux < 90;
+        boolean minus = aux1 >= 94 && aux1 < 122;
+        boolean ret = aux ==8;
+        boolean ent = aux == 13;
+        
+        if (Mayus ==false && minus == false && ret== false && ent == false){
+            System.out.println(evt.getKeyChar());
+            evt.consume();
+            
+        }else if(jTextField3.getText().length()>=20){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextField3KeyTyped
+
+    private void jTextField4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField4KeyTyped
+         char aux = evt.getKeyChar();
+        char aux1 = evt.getKeyChar();
+        boolean Mayus =aux >= 65 && aux < 90;
+        boolean minus = aux1 >= 94 && aux1 < 122;
+        boolean ret = aux ==8;
+        boolean ent = aux == 13;
+        
+        if (Mayus ==false && minus == false && ret== false && ent == false){
+            System.out.println(evt.getKeyChar());
+            evt.consume();
+            
+        }else if(jTextField4.getText().length()>=20){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextField4KeyTyped
+
+    private void jTextField5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField5KeyTyped
+         char aux = evt.getKeyChar();
+        char aux1 = evt.getKeyChar();
+        boolean Mayus =aux >= 65 && aux < 90;
+        boolean minus = aux1 >= 94 && aux1 < 122;
+        boolean ret = aux ==8;
+        boolean ent = aux == 13;
+        
+        if (Mayus ==false && minus == false && ret== false && ent == false){
+            System.out.println(evt.getKeyChar());
+            evt.consume();
+            
+        }else if(jTextField5.getText().length()>=20){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextField5KeyTyped
 
     /**
      * @param args the command line arguments
