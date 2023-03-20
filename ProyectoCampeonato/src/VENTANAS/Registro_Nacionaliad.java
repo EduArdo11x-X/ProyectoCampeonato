@@ -5,6 +5,8 @@
  */
 package VENTANAS;
 
+import java.awt.Color;
+
 /**
  *
  * @author HP
@@ -16,8 +18,50 @@ public class Registro_Nacionaliad extends javax.swing.JFrame {
      */
     public Registro_Nacionaliad() {
         initComponents();
+        registrar_nacionalidad.setEnabled(false);
     }
 
+    public void validar(){
+        
+        //ID NACIONALIDAD
+        if (id_nacionalidad.getText().isEmpty()) {
+            requerido1.setText("*");
+            requerido1.setForeground(Color.RED);
+
+        } else if (!id_nacionalidad.getText().matches("[[A-Z]{2}]*+\\-[[\\d]{4}]*")) {
+            requerido1.setText("*");
+            requerido1.setForeground(Color.RED);
+
+        } else {
+            requerido1.setText("✔");
+            requerido1.setForeground(Color.GREEN);
+
+        }
+        
+        //ID NACIONALIDAD
+        if (nombre_nacionalidad.getText().isEmpty()) {
+            requerido2.setText("*");
+            requerido2.setForeground(Color.RED);
+
+        } else if (!nombre_nacionalidad.getText().matches("[[A-Za-z]\\s]*{3,30}")) {
+            requerido2.setText("*");
+            requerido2.setForeground(Color.RED);
+
+        } else {
+            requerido2.setText("✔");
+            requerido2.setForeground(Color.GREEN);
+
+        }
+        
+        if (id_nacionalidad.getText().isEmpty()
+                || nombre_nacionalidad.getText().isEmpty()
+                || requerido1.getText().equals("*")
+                || requerido2.getText().equals("*")){
+            registrar_nacionalidad.setEnabled(false);
+        } else {
+            registrar_nacionalidad.setEnabled(true);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -29,12 +73,15 @@ public class Registro_Nacionaliad extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        id_nacionalidad = new javax.swing.JTextField();
+        nombre_nacionalidad = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        registrar_nacionalidad = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        requerido1 = new javax.swing.JLabel();
+        requerido2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
@@ -42,75 +89,75 @@ public class Registro_Nacionaliad extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "REGISTRO NACIONALIDAD", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Copperplate Gothic Light", 1, 24))); // NOI18N
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        id_nacionalidad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                id_nacionalidadKeyReleased(evt);
+            }
+        });
+        jPanel1.add(id_nacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 156, -1));
+
+        nombre_nacionalidad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                nombre_nacionalidadKeyReleased(evt);
+            }
+        });
+        jPanel1.add(nombre_nacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, 156, -1));
 
         jLabel2.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         jLabel2.setText("ID NACIONALIDAD : ");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         jLabel3.setText("NOMBRE NACIONALIDAD : ");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/disquete.png"))); // NOI18N
-        jButton1.setText("REGISTRAR");
+        registrar_nacionalidad.setBackground(new java.awt.Color(255, 255, 255));
+        registrar_nacionalidad.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
+        registrar_nacionalidad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/disquete.png"))); // NOI18N
+        registrar_nacionalidad.setText("REGISTRAR");
+        jPanel1.add(registrar_nacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, -1, -1));
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/izquierda.png"))); // NOI18N
         jButton2.setText("REGRESAR ");
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 350, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                    .addComponent(jTextField4))
-                .addGap(41, 41, 41))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(77, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(45, 45, 45)
-                .addComponent(jButton2)
-                .addGap(72, 72, 72))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap(33, Short.MAX_VALUE))
-        );
+        requerido1.setFont(new java.awt.Font("Copperplate", 1, 13)); // NOI18N
+        requerido1.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(requerido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 370, 80, 20));
+
+        requerido2.setFont(new java.awt.Font("Copperplate", 1, 13)); // NOI18N
+        requerido2.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(requerido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 370, 80, 20));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/ciudadania1.png"))); // NOI18N
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 546, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 426, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void id_nacionalidadKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_id_nacionalidadKeyReleased
+validar();
+// TODO add your handling code here:
+    }//GEN-LAST:event_id_nacionalidadKeyReleased
+
+    private void nombre_nacionalidadKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombre_nacionalidadKeyReleased
+validar();        // TODO add your handling code here:
+    }//GEN-LAST:event_nombre_nacionalidadKeyReleased
 
     /**
      * @param args the command line arguments
@@ -149,13 +196,16 @@ public class Registro_Nacionaliad extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTextField id_nacionalidad;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField nombre_nacionalidad;
+    private javax.swing.JButton registrar_nacionalidad;
+    private javax.swing.JLabel requerido1;
+    private javax.swing.JLabel requerido2;
     // End of variables declaration//GEN-END:variables
 }

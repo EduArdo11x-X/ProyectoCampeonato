@@ -11,15 +11,15 @@ package CLASES;
  */
 public class Entrenador {
     private String id_entrenador;
-    private String cedula_per;
+    private String entrenador_cedula_per;
     private String experiencia_entrenador;
 
     public Entrenador() {
     }
 
-    public Entrenador(String id_entrenador, String cedula_per, String experiencia_entrenador) {
+    public Entrenador(String id_entrenador, String entrenador_cedula_per, String experiencia_entrenador) {
         this.id_entrenador = id_entrenador;
-        this.cedula_per = cedula_per;
+        this.entrenador_cedula_per = entrenador_cedula_per;
         this.experiencia_entrenador = experiencia_entrenador;
     }
 
@@ -32,11 +32,11 @@ public class Entrenador {
     }
 
     public String getCedula_per() {
-        return cedula_per;
+        return entrenador_cedula_per;
     }
 
     public void setCedula_per(String cedula_per) {
-        this.cedula_per = cedula_per;
+        this.entrenador_cedula_per = cedula_per;
     }
 
     public String getExperiencia_entrenador() {
@@ -48,7 +48,7 @@ public class Entrenador {
     }
 
     public String toString() {
-        return "Entrenador{" + "id_entrenador=" + id_entrenador + ", cedula_per=" + cedula_per + ", experiencia_entrenador=" + experiencia_entrenador + '}';
+        return "Entrenador{" + "id_entrenador=" + id_entrenador + ", cedula_per=" + entrenador_cedula_per + ", experiencia_entrenador=" + experiencia_entrenador + '}';
     }
     
 }

@@ -5,6 +5,8 @@
  */
 package CLASES;
 
+import java.util.Date;
+
 /**
  *
  * @author HP
@@ -14,10 +16,10 @@ public class Campeonato {
     private String Campeonato_Id;
     private String Campeonato_nombre;
     private int campeonato_numeros_Equipo;
-    private String Campeonato_fecha_inicio;
-    private String Campeonato_fecha_final;
+    private Date Campeonato_fecha_inicio;
+    private Date Campeonato_fecha_final;
 
-    public Campeonato(String Campeonato_Id, String Campeonato_nombre, int campeonato_numeros_Equipo, String Campeonato_fecha_inicio, String Campeonato_fecha_final) {
+    public Campeonato(String Campeonato_Id, String Campeonato_nombre, int campeonato_numeros_Equipo, Date Campeonato_fecha_inicio, Date Campeonato_fecha_final) {
         this.Campeonato_Id = Campeonato_Id;
         this.Campeonato_nombre = Campeonato_nombre;
         this.campeonato_numeros_Equipo = campeonato_numeros_Equipo;
@@ -52,19 +54,19 @@ public class Campeonato {
         this.campeonato_numeros_Equipo = campeonato_numeros_Equipo;
     }
 
-    public String getCampeonato_fecha_inicio() {
+    public Date getCampeonato_fecha_inicio() {
         return Campeonato_fecha_inicio;
     }
 
-    public void setCampeonato_fecha_inicio(String Campeonato_fecha_inicio) {
+    public void setCampeonato_fecha_inicio(Date Campeonato_fecha_inicio) {
         this.Campeonato_fecha_inicio = Campeonato_fecha_inicio;
     }
 
-    public String getCampeonato_fecha_final() {
+    public Date getCampeonato_fecha_final() {
         return Campeonato_fecha_final;
     }
 
-    public void setCampeonato_fecha_final(String Campeonato_fecha_final) {
+    public void setCampeonato_fecha_final(Date Campeonato_fecha_final) {
         this.Campeonato_fecha_final = Campeonato_fecha_final;
     }
     

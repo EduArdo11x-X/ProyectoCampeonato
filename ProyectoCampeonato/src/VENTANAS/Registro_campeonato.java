@@ -5,6 +5,9 @@
  */
 package VENTANAS;
 
+import java.awt.Color;
+import java.util.Date;
+
 /**
  *
  * @author HP
@@ -16,7 +19,72 @@ public class Registro_campeonato extends javax.swing.JFrame {
      */
     public Registro_campeonato() {
         initComponents();
-        setSize(900,600);
+        setSize(900, 600);
+        btguardar_camp.setEnabled(false);
+
+    }
+
+    public void validar() {
+
+        //ID
+        if (txtid_camp.getText().isEmpty()) {
+            requerido1.setText("*");
+            requerido1.setForeground(Color.RED);
+
+        } else if (!txtid_camp.getText().matches("[[A-Z]{2}]*+\\-[[\\d]{4}]*")) {
+            requerido1.setText("*");
+            requerido1.setForeground(Color.RED);
+
+        } else {
+            requerido1.setText("✔");
+            requerido1.setForeground(Color.GREEN);
+        }
+
+        //NOMBRE
+        if (txtnombre_camp.getText().isEmpty()) {
+            requerido2.setText("*");
+            requerido2.setForeground(Color.RED);
+        } else if (!txtnombre_camp.getText().matches("[[A-Za-z]\\s]*{3,30}")) {
+            requerido2.setText("*");
+            requerido2.setForeground(Color.RED);
+        } else {
+            requerido2.setText("✔");
+            requerido2.setForeground(Color.GREEN);
+        }
+
+        //FECHAINICIO
+        Date selecionfechainicio=fechainicio_camp.getDate();
+        if (selecionfechainicio== null) {
+            requerido3.setText("*");
+            requerido3.setForeground(Color.RED);
+        } else {
+            requerido3.setText("✔");
+            requerido3.setForeground(Color.GREEN);
+        }
+        //FECHAFINAL
+        Date selecionfechafinal=fechafinal_camp.getDate();
+        if (selecionfechafinal == null) {
+            requerido4.setText("*");
+            requerido4.setForeground(Color.RED);
+        } else {
+            requerido4.setText("✔");
+            requerido4.setForeground(Color.GREEN);
+        }
+
+        //GUARDARBUTON
+        if (txtid_camp.getText().isEmpty()
+                || requerido1.getText().equals("*")
+                || txtnombre_camp.getText().isEmpty()
+                || requerido2.getText().equals("*")
+                || selecionfechainicio == null
+                || requerido3.getText().equals("*")
+                || selecionfechafinal == null
+                || requerido4.getText().equals("*")) {
+            btguardar_camp.setEnabled(false);
+        } else {
+            btguardar_camp.setEnabled(true);
+        }
+
     }
 
     /**
@@ -31,20 +99,21 @@ public class Registro_campeonato extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtid_camp = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        txtnombre_camp = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        btguardar_camp = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        numero_equi = new javax.swing.JSpinner();
+        fechafinal_camp = new com.toedter.calendar.JDateChooser();
+        fechainicio_camp = new com.toedter.calendar.JDateChooser();
+        requerido1 = new javax.swing.JLabel();
+        requerido2 = new javax.swing.JLabel();
+        requerido3 = new javax.swing.JLabel();
+        requerido4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,49 +126,87 @@ public class Registro_campeonato extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         jLabel2.setText("ID CAMPEONATO : ");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 390, -1, -1));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 350, 210, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, -1, -1));
+
+        txtid_camp.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtid_campKeyReleased(evt);
+            }
+        });
+        jPanel1.add(txtid_camp, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 350, 210, -1));
 
         jLabel5.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         jLabel5.setText("NOMBRE CAMPEONATO :");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 321, -1, -1));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 415, 210, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/lupa (1).png"))); // NOI18N
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(708, 84, 45, -1));
+        txtnombre_camp.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtnombre_campKeyReleased(evt);
+            }
+        });
+        jPanel1.add(txtnombre_camp, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 415, 210, -1));
 
         jLabel6.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
-        jLabel6.setText("FECHA DE CAMPEONATO : ");
+        jLabel6.setText("FECHA DE INICIO CAMPEONATO : ");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 135, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
-        jLabel7.setText("FECHA  FINAL DE  CAMPEONATO : ");
+        jLabel7.setText("FECHA FINAL DE  CAMPEONATO : ");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 205, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         jLabel8.setText("NÙMERO DE EQUIPOS : ");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 275, -1, -1));
 
-        jLabel9.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
-        jLabel9.setText("NÙMERO DE PARTIDOS : ");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 346, -1, -1));
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 167, 177, -1));
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 237, 181, -1));
-        jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 307, 181, -1));
-        jPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 376, 181, -1));
-
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 10)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/disquete.png"))); // NOI18N
-        jButton3.setText("GUARDAR");
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 470, 120, -1));
+        btguardar_camp.setBackground(new java.awt.Color(255, 255, 255));
+        btguardar_camp.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 10)); // NOI18N
+        btguardar_camp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/disquete.png"))); // NOI18N
+        btguardar_camp.setText("GUARDAR");
+        jPanel1.add(btguardar_camp, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 470, 120, -1));
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 10)); // NOI18N
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/izquierda.png"))); // NOI18N
         jButton4.setText("REGRESAR");
         jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 470, 130, -1));
+
+        numero_equi.setModel(new javax.swing.SpinnerNumberModel(4, 4, 20, 1));
+        jPanel1.add(numero_equi, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 300, -1, -1));
+
+        fechafinal_camp.setDateFormatString("dd/MM/yyyy");
+        fechafinal_camp.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                fechafinal_campKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                fechafinal_campKeyTyped(evt);
+            }
+        });
+        jPanel1.add(fechafinal_camp, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 230, 200, -1));
+
+        fechainicio_camp.setDateFormatString("dd/MM/yyyy");
+        fechainicio_camp.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                fechainicio_campKeyReleased(evt);
+            }
+        });
+        jPanel1.add(fechainicio_camp, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 160, 200, -1));
+
+        requerido1.setFont(new java.awt.Font("Copperplate", 1, 13)); // NOI18N
+        requerido1.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(requerido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, 80, 20));
+
+        requerido2.setFont(new java.awt.Font("Copperplate", 1, 13)); // NOI18N
+        requerido2.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(requerido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, 80, 20));
+
+        requerido3.setFont(new java.awt.Font("Copperplate", 1, 13)); // NOI18N
+        requerido3.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(requerido3, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 160, 80, 20));
+
+        requerido4.setFont(new java.awt.Font("Copperplate", 1, 13)); // NOI18N
+        requerido4.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(requerido4, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 230, 80, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -114,6 +221,26 @@ public class Registro_campeonato extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtid_campKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtid_campKeyReleased
+        validar();        // TODO add your handling code here:
+    }//GEN-LAST:event_txtid_campKeyReleased
+
+    private void txtnombre_campKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnombre_campKeyReleased
+        validar();        // TODO add your handling code here:
+    }//GEN-LAST:event_txtnombre_campKeyReleased
+
+    private void fechainicio_campKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fechainicio_campKeyReleased
+        validar();        // TODO add your handling code here:
+    }//GEN-LAST:event_fechainicio_campKeyReleased
+
+    private void fechafinal_campKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fechafinal_campKeyReleased
+        validar();        // TODO add your handling code here:
+    }//GEN-LAST:event_fechafinal_campKeyReleased
+
+    private void fechafinal_campKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fechafinal_campKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fechafinal_campKeyTyped
 
     /**
      * @param args the command line arguments
@@ -152,8 +279,9 @@ public class Registro_campeonato extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btguardar_camp;
+    private com.toedter.calendar.JDateChooser fechafinal_camp;
+    private com.toedter.calendar.JDateChooser fechainicio_camp;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -161,13 +289,13 @@ public class Registro_campeonato extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
+    private javax.swing.JSpinner numero_equi;
+    private javax.swing.JLabel requerido1;
+    private javax.swing.JLabel requerido2;
+    private javax.swing.JLabel requerido3;
+    private javax.swing.JLabel requerido4;
+    private javax.swing.JTextField txtid_camp;
+    private javax.swing.JTextField txtnombre_camp;
     // End of variables declaration//GEN-END:variables
 }

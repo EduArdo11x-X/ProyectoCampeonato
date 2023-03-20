@@ -13,12 +13,12 @@ public class Parroquia {
     
     private String id_parroquia;
     private String nombre_parroquia;
-    private String codigo_costal;
+    private String codigo_postal;
 
-    public Parroquia(String id_parroquia, String nombre_parroquia, String codigo_costal) {
+    public Parroquia(String id_parroquia, String nombre_parroquia, String codigo_postal) {
         this.id_parroquia = id_parroquia;
         this.nombre_parroquia = nombre_parroquia;
-        this.codigo_costal = codigo_costal;
+        this.codigo_postal = codigo_postal;
     }
 
     public Parroquia() {
@@ -40,18 +40,19 @@ public class Parroquia {
         this.nombre_parroquia = nombre_parroquia;
     }
 
-    public String getCodigo_costal() {
-        return codigo_costal;
+    public String getCodigo_postal() {
+        return codigo_postal;
     }
 
-    public void setCodigo_costal(String codigo_costal) {
-        this.codigo_costal = codigo_costal;
+    public void setCodigo_postal(String codigo_postal) {
+        this.codigo_postal = codigo_postal;
     }
 
     @Override
     public String toString() {
-        return "Parroquia{" + "id_parroquia=" + id_parroquia + ", nombre_parroquia=" + nombre_parroquia + ", codigo_costal=" + codigo_costal + '}';
+        return "Parroquia{" + "id_parroquia=" + id_parroquia + ", nombre_parroquia=" + nombre_parroquia + ", codigo_postal=" + codigo_postal + '}';
     }
-    
+
+  
     
 }

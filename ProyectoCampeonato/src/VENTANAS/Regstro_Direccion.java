@@ -5,6 +5,8 @@
  */
 package VENTANAS;
 
+import java.awt.Color;
+
 /**
  *
  * @author HP
@@ -16,6 +18,80 @@ public class Regstro_Direccion extends javax.swing.JFrame {
      */
     public Regstro_Direccion() {
         initComponents();
+        registrar_dire.setEnabled(false);
+
+    }
+
+    public void validar() {
+        //IDDIRE
+        if (id_dire.getText().isEmpty()) {
+            requerido.setText("*");
+            requerido.setForeground(Color.RED);
+
+        } else if (!id_dire.getText().matches("[[A-Z]{2}]*+\\-[[\\d]{4}]*")) {
+            requerido.setText("*");
+            requerido.setForeground(Color.RED);
+
+        } else {
+            requerido.setText("✔");
+            requerido.setForeground(Color.GREEN);
+
+        }
+        //IDPARRO
+
+        if (id_parro.getText().isEmpty()) {
+            requerido1.setText("*");
+            requerido1.setForeground(Color.RED);
+
+        } else {
+            requerido1.setText("✔");
+            requerido1.setForeground(Color.GREEN);
+
+        }
+
+        //PRINCIPAL
+        if (principal_dire.getText().isEmpty()) {
+            requerido2.setText("*");
+            requerido2.setForeground(Color.RED);
+
+        } else if (!principal_dire.getText().matches("[[A-Za-z]\\s]*{3,30}")) {
+            requerido2.setText("*");
+            requerido2.setForeground(Color.RED);
+
+        } else {
+            requerido2.setText("✔");
+            requerido2.setForeground(Color.GREEN);
+
+        }
+
+        //SECUNDARIA
+        if (secu_dire.getText().isEmpty()) {
+            requerido3.setText("*");
+            requerido3.setForeground(Color.RED);
+
+        } else if (!secu_dire.getText().matches("[[A-Za-z]\\s]*{3,30}")) {
+            requerido3.setText("*");
+            requerido3.setForeground(Color.RED);
+
+        } else {
+            requerido3.setText("✔");
+            requerido3.setForeground(Color.GREEN);
+
+        }
+
+        if (id_dire.getText().isEmpty()
+                || id_parro.getText().isEmpty()
+                || principal_dire.getText().isEmpty()
+                || secu_dire.getText().isEmpty()
+                || requerido1.getText().equals("*")
+                || requerido2.getText().equals("*")
+                || id_parro.getText().isEmpty()
+                || requerido3.getText().equals("*")) {
+            registrar_dire.setEnabled(false);
+        } else {
+            registrar_dire.setEnabled(true);
+        }
+
     }
 
     /**
@@ -31,14 +107,18 @@ public class Regstro_Direccion extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        id_dire = new javax.swing.JTextField();
+        id_parro = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        principal_dire = new javax.swing.JTextField();
+        secu_dire = new javax.swing.JTextField();
+        registrar_dire = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        requerido = new javax.swing.JLabel();
+        requerido1 = new javax.swing.JLabel();
+        requerido2 = new javax.swing.JLabel();
+        requerido3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,16 +134,40 @@ public class Regstro_Direccion extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         jLabel3.setText("CALLE PRINCIPAL  : ");
 
+        id_dire.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                id_direKeyReleased(evt);
+            }
+        });
+
+        id_parro.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                id_parroKeyReleased(evt);
+            }
+        });
+
         jLabel4.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
         jLabel4.setText("CALLE SECUNDARIA  : ");
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/disquete.png"))); // NOI18N
-        jButton1.setText("REGISTRAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        principal_dire.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                principal_direKeyReleased(evt);
+            }
+        });
+
+        secu_dire.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                secu_direKeyReleased(evt);
+            }
+        });
+
+        registrar_dire.setBackground(new java.awt.Color(255, 255, 255));
+        registrar_dire.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 12)); // NOI18N
+        registrar_dire.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/disquete.png"))); // NOI18N
+        registrar_dire.setText("REGISTRAR");
+        registrar_dire.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                registrar_direActionPerformed(evt);
             }
         });
 
@@ -80,63 +184,97 @@ public class Regstro_Direccion extends javax.swing.JFrame {
             }
         });
 
+        requerido.setFont(new java.awt.Font("Copperplate", 1, 13)); // NOI18N
+        requerido.setForeground(new java.awt.Color(255, 0, 0));
+
+        requerido1.setFont(new java.awt.Font("Copperplate", 1, 13)); // NOI18N
+        requerido1.setForeground(new java.awt.Color(255, 0, 0));
+
+        requerido2.setFont(new java.awt.Font("Copperplate", 1, 13)); // NOI18N
+        requerido2.setForeground(new java.awt.Color(255, 0, 0));
+
+        requerido3.setFont(new java.awt.Font("Copperplate", 1, 13)); // NOI18N
+        requerido3.setForeground(new java.awt.Color(255, 0, 0));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel1)
-                                .addComponent(jLabel2))
-                            .addComponent(jLabel3))
-                        .addGap(34, 34, 34)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField3)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton6)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(157, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addGap(45, 45, 45)
-                        .addComponent(jButton2)))
+                .addContainerGap(173, Short.MAX_VALUE)
+                .addComponent(registrar_dire)
+                .addGap(45, 45, 45)
+                .addComponent(jButton2)
                 .addGap(91, 91, 91))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel1)
+                        .addComponent(jLabel2))
+                    .addComponent(jLabel3))
+                .addGap(34, 34, 34)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(id_dire)
+                    .addComponent(id_parro)
+                    .addComponent(principal_dire)
+                    .addComponent(secu_dire, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButton6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(requerido1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(requerido, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(requerido2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(requerido3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton6)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel1)
+                                    .addComponent(id_dire, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(requerido, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(19, 19, 19)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel2)
+                                            .addComponent(id_parro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jButton6))))
+                            .addComponent(requerido1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel3)
+                                .addComponent(principal_dire, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(requerido2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel4)
+                            .addComponent(secu_dire, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(requerido3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
+                    .addComponent(registrar_dire)
                     .addComponent(jButton2))
                 .addGap(29, 29, 29))
         );
@@ -157,13 +295,29 @@ public class Regstro_Direccion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void registrar_direActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrar_direActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_registrar_direActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void id_direKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_id_direKeyReleased
+validar();        // TODO add your handling code here:
+    }//GEN-LAST:event_id_direKeyReleased
+
+    private void id_parroKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_id_parroKeyReleased
+validar();        // TODO add your handling code here:
+    }//GEN-LAST:event_id_parroKeyReleased
+
+    private void principal_direKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_principal_direKeyReleased
+validar();        // TODO add your handling code here:
+    }//GEN-LAST:event_principal_direKeyReleased
+
+    private void secu_direKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_secu_direKeyReleased
+validar();        // TODO add your handling code here:
+    }//GEN-LAST:event_secu_direKeyReleased
 
     /**
      * @param args the command line arguments
@@ -202,7 +356,8 @@ public class Regstro_Direccion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTextField id_dire;
+    private javax.swing.JTextField id_parro;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
@@ -210,9 +365,12 @@ public class Regstro_Direccion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField principal_dire;
+    private javax.swing.JButton registrar_dire;
+    private javax.swing.JLabel requerido;
+    private javax.swing.JLabel requerido1;
+    private javax.swing.JLabel requerido2;
+    private javax.swing.JLabel requerido3;
+    private javax.swing.JTextField secu_dire;
     // End of variables declaration//GEN-END:variables
 }

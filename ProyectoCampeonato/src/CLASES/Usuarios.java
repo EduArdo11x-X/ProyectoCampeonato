@@ -12,15 +12,15 @@ package CLASES;
 public class Usuarios {
     
     private String Id_Usuario;
-    private String cedula_per;
-    private String Campeonato_id;
+    private String usuario_cedula_per;
+    private String usuario_campeonato_id;
     private String Correo_Usuario;
     private String contraseña_usuario;
 
-    public Usuarios(String Id_Usuario, String cedula_per, String Campeonato_id, String Correo_Usuario, String contraseña_usuario) {
+    public Usuarios(String Id_Usuario, String usuario_cedula_per, String usuario_campeonato_id, String Correo_Usuario, String contraseña_usuario) {
         this.Id_Usuario = Id_Usuario;
-        this.cedula_per = cedula_per;
-        this.Campeonato_id = Campeonato_id;
+        this.usuario_cedula_per = usuario_cedula_per;
+        this.usuario_campeonato_id = usuario_campeonato_id;
         this.Correo_Usuario = Correo_Usuario;
         this.contraseña_usuario = contraseña_usuario;
     }
@@ -37,19 +37,19 @@ public class Usuarios {
     }
 
     public String getCedula_per() {
-        return cedula_per;
+        return usuario_cedula_per;
     }
 
     public void setCedula_per(String cedula_per) {
-        this.cedula_per = cedula_per;
+        this.usuario_cedula_per = cedula_per;
     }
 
     public String getCampeonato_id() {
-        return Campeonato_id;
+        return usuario_campeonato_id;
     }
 
     public void setCampeonato_id(String Campeonato_id) {
-        this.Campeonato_id = Campeonato_id;
+        this.usuario_campeonato_id = Campeonato_id;
     }
 
     public String getCorreo_Usuario() {
@@ -70,7 +70,7 @@ public class Usuarios {
 
     @Override
     public String toString() {
-        return "Usuario{" + "Id_Usuario=" + Id_Usuario + ", cedula_per=" + cedula_per + ", Campeonato_id=" + Campeonato_id + ", Correo_Usuario=" + Correo_Usuario + ", contrase\u00f1a_usuario=" + contraseña_usuario + '}';
+        return "Usuario{" + "Id_Usuario=" + Id_Usuario + ", cedula_per=" + usuario_cedula_per + ", Campeonato_id=" + usuario_campeonato_id + ", Correo_Usuario=" + Correo_Usuario + ", contrase\u00f1a_usuario=" + contraseña_usuario + '}';
     }
     
     

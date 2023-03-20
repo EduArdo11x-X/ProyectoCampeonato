@@ -11,8 +11,8 @@ package CLASES;
  */
 public class Jugador {
     private String id_jugador;
-    private String cedula_per;
-    private String id_posicion;
+    private String jugador_cedula_per;
+    private String jugador_id_posicion;
     private String Dorsal_jugador;
     private String Peso_Jugador;
     private String altura_jugador;
@@ -20,10 +20,10 @@ public class Jugador {
     public Jugador() {
     }
 
-    public Jugador(String id_jugador, String cedula_per, String id_posicion, String Dorsal_jugador, String Peso_Jugador, String altura_jugador) {
+    public Jugador(String id_jugador, String jugador_cedula_per, String jugador_id_posicion, String Dorsal_jugador, String Peso_Jugador, String altura_jugador) {
         this.id_jugador = id_jugador;
-        this.cedula_per = cedula_per;
-        this.id_posicion = id_posicion;
+        this.jugador_cedula_per = jugador_cedula_per;
+        this.jugador_id_posicion = jugador_id_posicion;
         this.Dorsal_jugador = Dorsal_jugador;
         this.Peso_Jugador = Peso_Jugador;
         this.altura_jugador = altura_jugador;
@@ -38,19 +38,19 @@ public class Jugador {
     }
 
     public String getCedula_per() {
-        return cedula_per;
+        return jugador_cedula_per;
     }
 
     public void setCedula_per(String cedula_per) {
-        this.cedula_per = cedula_per;
+        this.jugador_cedula_per = cedula_per;
     }
 
     public String getId_posicion() {
-        return id_posicion;
+        return jugador_id_posicion;
     }
 
     public void setId_posicion(String id_posicion) {
-        this.id_posicion = id_posicion;
+        this.jugador_id_posicion = id_posicion;
     }
 
     public String getDorsal_jugador() {
@@ -78,7 +78,7 @@ public class Jugador {
     }
 
     public String toString() {
-        return "Jugador{" + "id_jugador=" + id_jugador + ", cedula_per=" + cedula_per + ", id_posicion=" + id_posicion + ", Dorsal_jugador=" + Dorsal_jugador + ", Peso_Jugador=" + Peso_Jugador + ", altura_jugador=" + altura_jugador + '}';
+        return "Jugador{" + "id_jugador=" + id_jugador + ", cedula_per=" + jugador_cedula_per + ", id_posicion=" + jugador_id_posicion + ", Dorsal_jugador=" + Dorsal_jugador + ", Peso_Jugador=" + Peso_Jugador + ", altura_jugador=" + altura_jugador + '}';
     }
     
 }

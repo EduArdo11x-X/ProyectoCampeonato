@@ -11,16 +11,16 @@ package CLASES;
  */
 public class Detalle_Jugador {
     private String id_detalle_jugador;
-    private String id_jugador;
-    private String id_equipo;
+    private String detalle_id_jugador;
+    private String detalle_id_equipo;
 
-    public Detalle_Jugador() {
+    public Detalle_Jugador(String id_detalle_jugador, String detalle_id_jugador, String detalle_id_equipo) {
+        this.id_detalle_jugador = id_detalle_jugador;
+        this.detalle_id_jugador = detalle_id_jugador;
+        this.detalle_id_equipo = detalle_id_equipo;
     }
 
-    public Detalle_Jugador(String id_detalle_jugador, String id_jugador, String id_equipo) {
-        this.id_detalle_jugador = id_detalle_jugador;
-        this.id_jugador = id_jugador;
-        this.id_equipo = id_equipo;
+    public Detalle_Jugador() {
     }
 
     public String getId_detalle_jugador() {
@@ -31,25 +31,26 @@ public class Detalle_Jugador {
         this.id_detalle_jugador = id_detalle_jugador;
     }
 
-    public String getId_jugador() {
-        return id_jugador;
+    public String getDetalle_id_jugador() {
+        return detalle_id_jugador;
     }
 
-    public void setId_jugador(String id_jugador) {
-        this.id_jugador = id_jugador;
+    public void setDetalle_id_jugador(String detalle_id_jugador) {
+        this.detalle_id_jugador = detalle_id_jugador;
     }
 
-    public String getId_equipo() {
-        return id_equipo;
+    public String getDetalle_id_equipo() {
+        return detalle_id_equipo;
     }
 
-    public void setId_equipo(String id_equipo) {
-        this.id_equipo = id_equipo;
+    public void setDetalle_id_equipo(String detalle_id_equipo) {
+        this.detalle_id_equipo = detalle_id_equipo;
     }
 
+    @Override
     public String toString() {
-        return "Detalle_Jugador{" + "id_detalle_jugador=" + id_detalle_jugador + ", id_jugador=" + id_jugador + ", id_equipo=" + id_equipo + '}';
+        return "Detalle_Jugador{" + "id_detalle_jugador=" + id_detalle_jugador + ", detalle_id_jugador=" + detalle_id_jugador + ", detalle_id_equipo=" + detalle_id_equipo + '}';
     }
-    
-    
+
+  
 }

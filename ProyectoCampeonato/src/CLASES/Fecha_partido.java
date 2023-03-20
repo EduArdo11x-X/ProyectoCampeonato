@@ -5,6 +5,8 @@
  */
 package CLASES;
 
+import java.util.Date;
+
 /**
  *
  * @author user
@@ -12,15 +14,11 @@ package CLASES;
 public class Fecha_partido {
     
     private String id_fecha;
-    private int dia;
-    private String mes;
-    private int año;
+    private Date fecha;
 
-    public Fecha_partido(String id_fecha, int dia, String mes, int año) {
+    public Fecha_partido(String id_fecha, Date fecha) {
         this.id_fecha = id_fecha;
-        this.dia = dia;
-        this.mes = mes;
-        this.año = año;
+        this.fecha = fecha;
     }
 
     public Fecha_partido() {
@@ -34,35 +32,18 @@ public class Fecha_partido {
         this.id_fecha = id_fecha;
     }
 
-    public int getDia() {
-        return dia;
+    public Date getFecha() {
+        return fecha;
     }
 
-    public void setDia(int dia) {
-        this.dia = dia;
-    }
-
-    public String getMes() {
-        return mes;
-    }
-
-    public void setMes(String mes) {
-        this.mes = mes;
-    }
-
-    public int getAño() {
-        return año;
-    }
-
-    public void setAño(int año) {
-        this.año = año;
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
     }
 
     @Override
     public String toString() {
-        return "Fecha_partido{" + "id_fecha=" + id_fecha + ", dia=" + dia + ", mes=" + mes + ", a\u00f1o=" + año + '}';
+        return "Fecha_partido{" + "id_fecha=" + id_fecha + ", fecha=" + fecha + '}';
     }
-    
     
     
 }
